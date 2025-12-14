@@ -1,0 +1,673 @@
+/*===================================================================
+  ESTILOS GENERALES Y DISEÑO DE PRESTIGIO (SAZÓN ANDINO MADRID)
+===================================================================*/
+
+/* Variables de Color */
+:root {
+    --color-primary: #4B3832; /* Marrón Oscuro / Café Elegante */
+    --color-secondary: #C8A359; /* Dorado Suave / Bronce */
+    --color-background: #F5F5DC; /* Crema / Beige */
+    --color-text-dark: #333333;
+    --color-text-light: #FFFFFF;
+    --color-accent: #8B4513; /* Tostado más oscuro */
+}
+
+/* Base y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* --- Header y Navegación RESPONSIVA --- */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo como Link */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links li a {
+    color: var(--color-text-light);
+    font-weight: 400;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+/* --- Botones y Componentes --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 10px 20px;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    margin: 10px auto 0;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    background: url('https://picsum.photos/1600/800?random=10') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    color: var(--color-text-light);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura */
+}
+
+.hero-content {
+    z-index: 10;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Animaciones sutiles */
+.fade-in { opacity: 0; animation: fadeIn 1s forwards; }
+.fade-in-delay { opacity: 0; animation: fadeIn 1s 0.3s forwards; }
+.fade-in-delay-2 { opacity: 0; animation: fadeIn 1s 0.6s forwards; }
+@keyframes fadeIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+
+/* --- ABOUT SECTION --- */
+.about {
+    background-color: var(--color-text-light);
+}
+
+.about-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- HIGHLIGHT SECTION --- */
+.highlight {
+    text-align: center;
+}
+
+.highlight-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.highlight-content p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* --- MENU PAGE --- */
+.menu-subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+#menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.menu-category-title {
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin: 40px 0 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(200, 163, 89, 0.3);
+}
+
+.menu-item {
+    background-color: var(--color-text-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.item-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.item-details {
+    padding: 20px;
+}
+
+.item-details h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.item-details .price {
+    font-weight: 700;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.item-details p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* --- NUEVOS ESTILOS PARA FORMULARIOS (ELEGANCIA EN RESERVAS Y CONTACTO) --- */
+
+.reservas-subtitle, .contacto-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.reservation-form-container, .contact-form-container {
+    max-width: 650px; 
+    margin: 40px auto;
+    padding: 40px 50px; 
+    background-color: var(--color-text-light); 
+    border-radius: 12px; 
+    /* Sombra más profunda y cálida */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05); 
+    transition: opacity 0.5s ease-out; 
+}
+
+/* Estilos de los Títulos dentro del Formulario */
+.reservation-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(75, 56, 50, 0.1); /* Separador sutil */
+}
+
+/* Estilos del Grupo de Formulario */
+.form-group {
+    margin-bottom: 25px; 
+}
+
+/* Estilos de Etiquetas */
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+}
+
+/* Estilos de Inputs y Select */
+.form-group input:not([type="submit"]), 
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px 18px; 
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    background-color: #fcfcfc; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto de Foco (Focus) llamativo pero sobrio */
+.form-group input:focus, 
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-secondary); 
+    box-shadow: 0 0 0 3px rgba(200, 163, 89, 0.2); 
+    outline: none;
+    background-color: var(--color-text-light);
+}
+
+/* Estilos específicos para Select/Options (para la flecha de dropdown) */
+.form-group select {
+    appearance: none; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 20 20" width="20"><path fill="%234B3832" d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px; 
+}
+
+/* Estilo para el botón de enviar dentro del formulario */
+.reservation-form .btn-primary,
+.contact-form .btn-primary {
+    width: 100%; 
+    margin-top: 15px;
+    font-size: 1.1rem;
+    padding: 16px;
+}
+
+/* Estilos de mensajes de estado */
+.message-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.message-box.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* --- CONTACTO Y MAPA --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info {
+    padding: 20px 0;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.contact-info p, .contact-info li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.map-container {
+    margin-top: 60px;
+}
+
+.map-container h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.map-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-section {
+    flex-basis: 30%;
+}
+
+.footer-section h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--color-secondary);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+}
+
+/*===================================================================
+  MEDIA QUERIES (RESPONSIVIDAD)
+===================================================================*/
+
+/* Tablet y dispositivos medianos */
+@media (max-width: 900px) {
+    .container {
+        padding: 40px 0;
+    }
+    
+    .about-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image {
+        order: -1; 
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Contacto */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Menú en tablets: 2 columnas */
+    #menu-container {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+/* Móvil y dispositivos pequeños */
+@media (max-width: 768px) {
+    /* Navegación Móvil */
+    .menu-toggle {
+        display: block; 
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+    
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 65px; 
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    .nav-links.active {
+        display: flex; 
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .nav-links li a {
+        border-bottom: none;
+    }
+
+    /* Textos principales */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    /* Menú */
+    #menu-container {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .menu-item {
+        flex-direction: row; /* Layout horizontal más compacto */
+        align-items: center;
+    }
+
+    .item-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .item-details {
+        flex: 1;
+    }
+
+    /* Formularios más compactos */
+    .reservation-form-container, .contact-form-container {
+        padding: 30px 20px;
+        margin: 20px auto;
+    }
+
+    /* Footer */
+    .footer-content {
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .footer-section {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Ajustes finos para móviles muy pequeños */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    /* Volver a layout vertical para el menú en móviles muy estrechos */
+    .menu-item {
+        flex-direction: column;
+    }
+    .item-image {
+        width: 100%;
+        height: 180px;
+    }
+    /* Footer a una sola columna */
+    .footer-section {
+        flex-basis: 100%;
+    }
+}

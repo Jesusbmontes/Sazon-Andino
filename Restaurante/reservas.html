@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Sazón Andino</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-link">
+                <div class="logo">Sazón Andino</div>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="reservas.html" class="active">Reservas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reservas-page container">
+            <h1 class="section-title">📅 Reserve su Experiencia Gastronómica</h1>
+            <p class="reservas-subtitle">Complete el formulario para asegurar su mesa. Le esperamos para brindarle un servicio de excelencia.</p>
+
+            <div class="reservation-form-container">
+                <form id="reservation-form" class="reservation-form">
+                    <h3>1. Fecha y Hora</h3>
+                    <div class="form-group">
+                        <label for="date">Fecha:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Hora (de 19:30 a 23:00):</label>
+                        <input type="time" id="time" name="time" min="19:30" max="23:00" required>
+                    </div>
+
+                    <h3>2. Detalles</h3>
+                    <div class="form-group">
+                        <label for="guests">Número de Personas:</label>
+                        <select id="guests" name="guests" required>
+                            <option value="" disabled selected>Seleccione</option>
+                            <option value="1">1 Persona</option>
+                            <option value="2">2 Personas</option>
+                            <option value="3">3 Personas</option>
+                            <option value="4">4 Personas</option>
+                            <option value="5">5 Personas</option>
+                            <option value="6">6 Personas</option>
+                            <option value="7">7 Personas</option>
+                            <option value="8">8 Personas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasion">Ocasión (Opcional):</label>
+                        <input type="text" id="occasion" name="occasion" placeholder="Aniversario, Negocios, Cumpleaños...">
+                    </div>
+
+                    <h3>3. Información de Contacto</h3>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Confirmar Reserva</button>
+                    <div id="reservation-message" class="message-box" style="display: none;"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h4>Sazón Andino</h4>
+                <p>C/ Gran Vía # 12, 28013, Madrid.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Teléfono: +34 91 555-SAZON</p>
+                <p>Email: reservas.madrid@sazonandino.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Sazón Andino Madrid. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
